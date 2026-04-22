@@ -1,0 +1,26 @@
+# D2 示例 Path Card（最小可用实例）
+id: p_d2_example
+type: path_card
+domain: D2_engineering_api
+subdomain: core
+version: 0.1.0
+status: active
+purpose: 提供一个可稳定解析的路径示例，演示基础编排字段结构。
+inputs:
+  - name: request_text
+    type: string
+outputs:
+  - name: final_answer
+    type: string
+dependencies:
+  - i_d2_example
+trigger_conditions:
+  - 任务类型为 engineering_api 基础问答
+forbidden_conditions:
+  - 接口 i_d2_example 不可用
+writeback_policy:
+  mode: append_only
+  target: CCOS/runtime_logs/d2_path.log
+  conflict_strategy: reject_on_conflict
+notes:
+  - 该路径仅用于模板解析验证，不代表生产流程。
