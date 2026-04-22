@@ -1,0 +1,34 @@
+# Domain Master Card 模板
+# 用途：定义某个 domain/subdomain 的治理信息与能力边界。
+
+# 全局唯一标识，建议使用可读且稳定的命名（如 d2_engineering_api_master）。
+id: ""
+# 卡片类型，Domain Master 固定为 domain_master_card。
+type: domain_master_card
+# 领域标识（一级域），例如 D2_engineering_api。
+domain: ""
+# 子领域标识（二级域），若无可填 default 或 core。
+subdomain: ""
+# 版本号，建议语义化版本（如 0.1.0）。
+version: ""
+# 生命周期状态（如 draft/active/deprecated/archived）。
+status: draft
+# 目标与意图：说明该 Domain Master 的职责和适用范围。
+purpose: ""
+# 输入定义：描述该域在编排/执行时依赖的输入对象（列表）。
+inputs: []
+# 输出定义：描述该域产出的对象、事件或副作用（列表）。
+outputs: []
+# 依赖定义：上游系统、共享组件或前置卡片 ID（列表）。
+dependencies: []
+# 触发条件：满足哪些信号/上下文时可启用本域能力（列表）。
+trigger_conditions: []
+# 禁止条件：命中即禁止执行的约束（列表）。
+forbidden_conditions: []
+# 回写策略：执行后允许写回的位置、格式、冲突策略等。
+writeback_policy:
+  mode: append_only
+  target: ""
+  conflict_strategy: reject_on_conflict
+# 备注：补充说明、运维提示、变更记录等。
+notes: []

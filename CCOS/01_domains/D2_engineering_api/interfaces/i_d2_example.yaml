@@ -1,0 +1,26 @@
+# D2 示例 Interface Card（最小可用实例）
+id: i_d2_example
+type: interface_card
+domain: D2_engineering_api
+subdomain: core
+version: 0.1.0
+status: active
+purpose: 提供一个可稳定解析的接口示例，用于模板校验与集成测试。
+inputs:
+  - name: request_text
+    type: string
+    required: true
+outputs:
+  - name: response_text
+    type: string
+dependencies: []
+trigger_conditions:
+  - 收到 D2 域内标准请求
+forbidden_conditions:
+  - 缺少必要输入 request_text
+writeback_policy:
+  mode: append_only
+  target: CCOS/runtime_logs/d2_interface.log
+  conflict_strategy: reject_on_conflict
+notes:
+  - 该文件用于验证程序可读取并映射统一字段基线。

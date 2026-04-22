@@ -1,0 +1,34 @@
+# Path Card 模板
+# 用途：定义跨接口的执行路径（步骤序列、决策分支、退出条件）。
+
+# 全局唯一标识，建议 p_<domain>_<name> 形式。
+id: ""
+# 卡片类型，Path 固定为 path_card。
+type: path_card
+# 所属一级领域。
+domain: ""
+# 所属二级子领域。
+subdomain: ""
+# 版本号，建议语义化版本。
+version: ""
+# 生命周期状态（draft/active/deprecated/archived）。
+status: draft
+# 路径目的：说明该路径为哪类任务提供端到端编排。
+purpose: ""
+# 输入集合：进入路径所需的初始上下文和参数。
+inputs: []
+# 输出集合：路径完成后产出的标准结果。
+outputs: []
+# 依赖项：路径中会调用的接口 ID、外部系统或工具。
+dependencies: []
+# 触发条件：满足哪些条件时应选择该路径。
+trigger_conditions: []
+# 禁止条件：命中即不可执行该路径。
+forbidden_conditions: []
+# 回写策略：路径级别状态写回规则（覆盖接口级写回时以此为准）。
+writeback_policy:
+  mode: append_only
+  target: ""
+  conflict_strategy: reject_on_conflict
+# 备注：运行时注意事项、回滚建议、排障提示。
+notes: []

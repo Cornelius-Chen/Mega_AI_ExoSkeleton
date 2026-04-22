@@ -1,0 +1,34 @@
+# Interface Card 模板
+# 用途：定义可被路径/流程调用的标准接口（函数、API、能力单元）。
+
+# 全局唯一标识，建议 i_<domain>_<name> 形式。
+id: ""
+# 卡片类型，Interface 固定为 interface_card。
+type: interface_card
+# 所属一级领域。
+domain: ""
+# 所属二级子领域。
+subdomain: ""
+# 版本号，建议语义化版本。
+version: ""
+# 生命周期状态（draft/active/deprecated/archived）。
+status: draft
+# 接口目的：一句话说明该接口解决的问题。
+purpose: ""
+# 输入契约：参数、上下文、默认值等（列表或对象均可）。
+inputs: []
+# 输出契约：返回结构、错误结构、副作用说明等。
+outputs: []
+# 依赖项：运行该接口所需的外部服务、模型、凭证、前置接口。
+dependencies: []
+# 触发条件：在何种事件/状态下应调用本接口。
+trigger_conditions: []
+# 禁止条件：调用前必须排除的风险条件。
+forbidden_conditions: []
+# 回写策略：接口执行后写回到状态仓/文档/消息总线的策略。
+writeback_policy:
+  mode: append_only
+  target: ""
+  conflict_strategy: reject_on_conflict
+# 备注：实现细节、SLA、审计要求等补充信息。
+notes: []
